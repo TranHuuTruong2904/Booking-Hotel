@@ -6,7 +6,6 @@ import {Link, useNavigate} from 'react-router-dom';
 import AuthContext from '../common/AuthProvider';
 
 const LoginPage = () => {
-
     const userName = useRef("");
     const password = useRef("");
     const {login}= useContext(AuthContext)
@@ -42,7 +41,7 @@ const LoginPage = () => {
                                            required/>
                                 </div>
                                 <div className="form-group">
-                                    <button variant="primary" type="submit" >Log In</button>
+                                    <button variant="primary" type="submit" >Đăng nhập</button>
                                 </div>
                                 <p className="form-group text">
                                     Bạn chưa có tài khoản?

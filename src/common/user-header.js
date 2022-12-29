@@ -2,7 +2,7 @@ import React, {useContext, useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import AuthContext from "../common/AuthProvider";
-import header from "../assets/css/user-header.css"
+import "../assets/css/user-header.css"
 
 
 const UserHeader = () => {
@@ -10,8 +10,8 @@ const UserHeader = () => {
     return <nav class="navbar header nav-light navbar-expand-lg navbar-light shadow fixed-top">
         <div class="container container-navbar my-nav d-flex justify-content-between align-items-center">
             <div className="nav-header">
-                <Link class="navbar-brand  h2 align-self-center " to="/home">
-                    BOOKING
+                <Link class="navbar-brand h2" to="/home">
+                    BOOKING HOTEL
                 </Link>
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
                         data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent"
@@ -21,8 +21,7 @@ const UserHeader = () => {
             </div>
 
 
-            <div
-                class="align-self-center mgt-16 user-header mgd-16 collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
+            <div class="align-self-center mgt-16 user-header mgd-16 collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
                 id="templatemo_main_nav">
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
@@ -34,7 +33,14 @@ const UserHeader = () => {
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link1" href="/home">Liên hệ</a>
+                            <a class="nav-link" href="/contact">Liên hệ</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Đăng Xuất</a>
                         </li>
                     </ul>
                 </div>

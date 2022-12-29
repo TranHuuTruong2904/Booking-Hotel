@@ -1,16 +1,19 @@
 import React, {useEffect, useState} from "react";
 import userLayout from "../pages/userLayout"
-import "./../assets/css/user-view.css";
+import "../assets/css/user-view.css";
 import axiosApiInstance from "../common/interceptor";
 import axios from "../common/axios";
 import {toast} from "react-toastify";
 import {useNavigate} from "react-router-dom";
 import Form from 'react-bootstrap/Form';
+import "../assets/css/homepage.css"
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
 const [list,setList]=useState([])
+const navigate = useNavigate()
 async function getTP() {
-    const result = await axiosApiInstance.get(axiosApiInstance.defaults.baseURL + `/api/v1/hotels/city/1566083`);
+    const result = await axiosApiInstance.get(axiosApiInstance.defaults.baseURL + `/api/v1/hotels/city/1571058`);
     console.log(result?.data.data)
     setList(result?.data.data)
 }
@@ -21,16 +24,14 @@ const handleChange =async (e) => {
     } catch (error) {
         
     }
-   
-    
+ }
 
+ const handleClick=(e)=>{
+    navigate(`/order?id=${e.currentTarget.id}`);
  }
 useEffect(() => {
     getTP();
-
 }, []);
-
-
     return <>
         {/* <!-- Start Banner Hero --> */}
         <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
@@ -68,8 +69,6 @@ useEffect(() => {
         </div>
         {/* <!-- End Banner Hero --> */}
 
-      
-
         {/**<!--Start favorite category--> */}
 
         {/* <!-- Start hottel Product --> */}
@@ -86,34 +85,29 @@ useEffect(() => {
                 
                 <div class="navbar align-self-center d-flex ">
                     <Form.Select size="lg"  onChange={handleChange}>
-                        <option value="1566083">Thành Phố Hồ Chí Minh</option>
                         <option value="1571058">Thành Phố Phan Thiết</option>
+                        <option value="1566083">Thành Phố Hồ Chí Minh</option>
                         <option value="1562414">Thành Phố Bà Rịa - Vũng Tàu</option>
                     </Form.Select>
                     </div>
                 <div className="row">
-                    {list.map((item) => (
+                {list.map((item) => (
                         <div className="col-md-3">
                             <div className="card mb-3 product-wap rounded-0">
-                                <div className="card rounded-0">
-                                    <img className="img-config card-img rounded-0 img-fluid"
-                                       src={item.avatar} />
-
-                                       <p>{item.name}</p>
-                                   
+                                <div className="hotel text-center card rounded-0">
+                                    <p className="if-hotel">{item.name}</p>
+                                    <img className="img-hotel img-config card-img rounded-0 img-fluid"
+                                       src={item.avatar} id={item.id} onClick={handleClick}/>
+                                       <p className="if-hotel">Đạt chuẩn: {item.star} sao</p>
                                 </div>
-                            
                             </div>
                         </div>
+                       
                     ))}
                 </div>
             </div>
         </section>
         {/* <!-- End Best Seller Product --> */}
-
-       
-
-     
     </>
 
 }

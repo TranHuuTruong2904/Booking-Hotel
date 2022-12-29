@@ -28,7 +28,7 @@ export const AuthContextProvider = ({ children }) => {
       
       if(apiResponse.data.status === "success"){
         localStorage.setItem("tokens", JSON.stringify(apiResponse));
-        window.location.href = "/";
+        window.location.href = "/home";
       }
       else
         toast.error(("Vui lòng kiểm tra lại thông tin"));

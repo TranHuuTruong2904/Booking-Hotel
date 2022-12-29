@@ -1,0 +1,47 @@
+.book{
+    display: flex;
+}
+
+.info-room{
+    display: flex;
+    width: 600px;
+    margin: 65px 35px 71px;
+    border-radius: 4px;
+    justify-content: center;
+    font-size: 2rem;
+}
+.order-form{
+    width: 100%;
+}
+.h1-h1{
+    font-size: 1rem;
+}
+.txtFrm{
+    line-height: 50px !important;
+}
+.selectFrm{
+    width: 74%;
+
+}
+.prices{ display: flex;}
+.imgInfo{
+    width:100% !important;
+    margin-left: auto;
+
+}
+
+.form-book{
+    z-index: 15;
+    position: relative;
+    width: 600px;
+    border-radius: 4px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    margin: 65px auto 65px;
+    overflow: hidden;
+    margin-right: 80px;
+}
+
+.exit{
+    margin-left: 45%;
+}

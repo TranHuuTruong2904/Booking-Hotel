@@ -5,18 +5,17 @@ import LoginPage from "./pages/LoginPage";
 import {AuthContextProvider} from "./common/AuthProvider";
 import HomePage from "./pages/HomePage";
 import RegisterPage from "./pages/RegisterPage";
-
+import OrderPage from './pages/OrderPage';
 
 function App() {
-    // const tokens = JSON.parse(localStorage.getItem('tokens'));
-    // const permission=(tokens?(jwt_decode(tokens?.data?.accessToken)?.authorities):null)
     return (
         <AuthContextProvider>
             <Routes>
-                <Route path='/login' element={<LoginPage/>}/>
                 <Route path='/' element={<HomePage/>} />
+                <Route path='/login' element={<LoginPage/>}/>
                 <Route path='/home' element={<HomePage/>} />
                 <Route path='/register' element={<RegisterPage/>} />
+                <Route path='/order' element={<OrderPage/>} />
             </Routes>
         </AuthContextProvider>
     )
