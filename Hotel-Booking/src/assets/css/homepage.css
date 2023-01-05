@@ -1,0 +1,7 @@
+.col-md-3{
+    justify-content: center;
+}
+
+.hotel:hover{
+    background-color: rgb(216, 243, 243);
+}
